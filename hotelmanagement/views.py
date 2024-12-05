@@ -1,11 +1,13 @@
 from rest_framework import viewsets
 from .models import *
 from .serializers import *
+from .permissions import CheckStatus
 
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
 
 class HotelViewSet(viewsets.ModelViewSet):
     queryset = Hotel.objects.all()
@@ -28,4 +30,5 @@ class BookingViewSet(viewsets.ModelViewSet):
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class =ReviewSerializer
+    permission_classes = [ CheckStatus ]
 

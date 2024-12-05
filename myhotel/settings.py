@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hotelmanagement',
     'accounts',
+    'modeltranslation',
 
 
 ]
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'myhotel.urls'
@@ -115,7 +117,16 @@ TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
+
+MODELTRANSLATION_LANGUAGES = ('Ru', 'en')
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru','Russian'),
+)
 
 
 # Static files (CSS, JavaScript, Images)
